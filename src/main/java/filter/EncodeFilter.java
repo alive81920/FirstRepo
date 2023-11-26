@@ -1,17 +1,31 @@
 package filter;
-
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+ 
 import java.io.IOException;
+import java.nio.file.Path;
 
-@WebFilter(filterName = "EncodeFilter", urlPatterns = "/*")
-public class EncodeFilter {
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.sound.sampled.AudioFormat.Encoding;
+ 
+public class EncodeFilter implements Filter{
+	public EncodeFilter(){
+		System.out.println("过滤器构造");
+	}
 	public void destroy() {
+		System.out.println("过滤器销毁");
 	}
-
-	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
-			throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		chain.doFilter(req, resp);
+	public void doFilter(ServletRequest request, ServletResponse response,FilterChain chain) throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8"); //将编码改为utf-8
+		response.setContentType("utf-8");
+		chain.doFilter(request, response);
 	}
+ 
+	public void init(FilterConfig arg0) throws ServletException {
+		System.out.println("过滤器初始化");
+	}
+ 
 }
