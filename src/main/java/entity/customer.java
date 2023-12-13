@@ -1,49 +1,65 @@
 package entity;
 
 public class customer {
-	private String name;
-	private String pwd;
-	private String email;
-	private String phone;
-	private String adress;
-
-	public String GetName() {
-		return name;
+	private int ID;
+	private String UserName;
+	private String UserPwd;
+	private String UserEmail;
+	private String UserPhone;
+	private String UserAdress;
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+	public String getUserPwd() {
+		return UserPwd;
+	}
+	public void setUserPwd(String userPwd) {
+		UserPwd = userPwd;
+	}
+	public String getUserEmail() {
+		return UserEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		UserEmail = userEmail;
+	}
+	public String getUserAdress() {
+		return UserAdress;
+	}
+	public void setUserAdress(String userAdress) {
+		UserAdress = userAdress;
+	}
+	public String getUserPhone() {
+		return UserPhone;
+	}
+	public void setUserPhone(String userPhone) {
+		UserPhone = userPhone;
 	}
 
-	public void SetName(String name) {
-		this.name = name;
+	public customer() {
 	}
-
-	public String GetPwd() {
-		return pwd;
+	
+	@Override
+	public String toString() {
+		return "customer[ID="+ID+",UserName="+UserName+",UserPwd="+UserPwd+",UserPhone="+UserPhone+",UserEmail="+UserEmail+",UserAdress="+UserAdress+"]";
 	}
-
-	public void SetPwd(String pwd) {
-		this.pwd = pwd;
+	public customer(int ID,String name,String pwd,String email,String phone,String adress) {
+		this.ID=ID;
+		this.UserName=name;
+		this.UserPwd=pwd;
+		this.UserPhone=phone;
+		this.UserEmail=email;
+		this.UserAdress=adress;
 	}
-
-	public String GetEmail() {
-		return email;
+	public int getID() {
+		return ID;
 	}
-
-	public void SetEmail(String email) {
-		this.email = email;
+	public void setID(int iD) {
+		ID = iD;
 	}
-
-	public String GetPhone() {
-		return phone;
-	}
-
-	public void SetPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String GetAdress() {
-		return adress;
-	}
-
-	public void SetAdress(String adress) {
-		this.adress = adress;
-	}
+	
+	
+	
 }

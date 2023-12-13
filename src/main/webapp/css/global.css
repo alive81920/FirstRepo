@@ -1,13 +1,234 @@
 @charset "UTF-8";
 
-*{
-	margin: 0%;
-	padding: 0%;
+section{
+	position: static;
+	width: auto;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-x: hidden;
 }
 
-.box{
-    margin: 0 0 15px 0;
-    display: block;
-    border: 20;
-    padding: 0;
+.login{
+	position: static;
+	width: 500px;
+	padding: 50px;
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(3px);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
+
+.login h2{
+	position: static;
+	width: auto;
+	text-align: center;
+	color: #8f2c24;
+}
+
+.login .inputbox{
+	position: static;
+}
+
+.login .inputbox span{
+	position: static;
+	width: auto;
+	text-align: center;
+	color: #8f2c24;
+}
+
+.login .inputbox input{
+	position: static;
+	padding: 10px;
+	width: 80%;
+	color: black;
+	background: #fff;
+	border: none;
+	
+}
+
+.login .inputbox p{
+	position: static;
+	width: auto;
+	text-align: center;
+	color: blue;
+}
+
+.login .inputbox ::placeholder{
+	color: gray;
+}
+
+.login .inputbox #btn{
+	position: static;
+	border: none;
+	outline: none;
+	background: #8f2c24;
+	color: #fff;
+	cursor: pointer;
+}
+
+.login .group{
+	display: flex;
+	justify-content: space-between;
+}
+
+.login .group a{
+	color: #8f2c24;
+	text-decoration: none;
+}
+
+.login .group input{
+	color: #8f2c99;
+	border: none;
+}
+
+.listchoose{
+	display: block;
+	justify-content: center;
+}
+
+.listchoose a{
+	display: block;
+	color: green;
+	padding: 8px 12px;
+	font-size: 20px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.usercenter{
+	margin-left:10%;
+	padding:1px 16px;
+	height:1000px;
+	text-decoration: none;
+}
+
+.uss{
+	width: 100%;
+	padding:1px 16px;
+	margin-top:0%;
+	text-decoration: none;
+}
+
+.usercenter p{
+	color: red;
+}
+
+.usercenter ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.uss ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.usercenter ul li{
+	float: left;
+}
+
+.uss ul li{
+	float: left;
+}
+
+.usercenter ul li a{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.uss ul li a{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.usercenter ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.uss ul li a:hover:not(.active){
+	background-color: #111;
+}
+
+.tabletolist{
+	border-collapse:collapse;
+	width:100%;
+}
+
+.tabletolist,th,td{
+	border: 1px solid black;
+}
+
+.tabletolist tr th{
+	text-align: center;
+	background-color: burlywood;
+	height: 30px;
+} 
+
+.tabletolist tr td{
+	text-align: center;
+	height: 50px;
+}
+
+
+.box11seacher{
+	width:500px;
+	height:40px;
+	border:2px solid black;
+	margin:auto;
+}
+
+.input11seacher{
+	float:left;
+	width:400px;/*宽400*/
+	height:38px;/*高38（因为文本框内外边框要占用1像素所以总体高度减2，其他盒子同理）*/
+	outline:none;
+	border:none;/*取消文本框内外边框*/
+	}
+
+.button11seacher{
+	float:left;
+	width:96px;
+	height:40px;
+	color:white;
+	background-color:red;/*将按钮背景设置为红色，字体设置为白*/
+	border:none;
+	outline:none;/*取消边框和外边框将按钮边框去掉*/
+}
+
+
+.xxxdec li{
+	display: inline;
+}
+
+.yyydec li{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

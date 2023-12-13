@@ -1,18 +1,16 @@
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
+
 import entity.customer;
 
 public interface CustomerDao {
-	public boolean register(customer user);// 新用户注册
-
-	public boolean login(String name, String pwd);// 用户登录
-
-	public List<customer> getCustomersAll();// 返回用户信息集合
-
-	public boolean delete(String name);// 删除用户
-
-	public boolean updateNotName(String name, String pwd, String email, String phone, String adress);// 更新用户资料
-	
-	public boolean updateName(String name, String pwd, String email, String phone, String adress);// 更新用户登录名
+	public boolean Add(customer user) throws SQLException;//添加用户
+	public boolean delete(String name);//删除用户
+	public boolean updata(String name,String pwd,String phone,String email,String adress);//修改用户信息
+	public boolean updata_login(String name,String pwd,String phone,String email,String adress) throws SQLException;//修改用户登录名
+	public customer select(String name);//查找用户
+	public int selectCount();//返回用户数量
+	public List<customer> SelectAll(String name,int pageNumber,int pageSize);
 }

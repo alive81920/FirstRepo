@@ -14,19 +14,19 @@ public class DBSQL {
 	public static void init() { // 初始化，连接数据库
 		try {
 			Class.forName(driverName);
-			System.out.print("驱动加载成功");
+			//System.out.print("驱动加载成功");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.print("驱动加载失败");
+			//System.out.print("驱动加载失败");
 		}
 		try {
 			dbCom = DriverManager.getConnection(dbURL, usernameString, userPwd);
-			System.out.println("SQL连接数据库成功");
+			//System.out.println("SQL连接数据库成功");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.print("SQL连接数据库失败");
+			//System.out.print("SQL连接数据库失败");
 		}
 	}
 
@@ -35,7 +35,7 @@ public class DBSQL {
 			dbCom.close();
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.print("SQL数据库关闭异常");
+			//System.out.print("SQL数据库关闭异常");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class DBSQL {
 			i = pStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO: handle exception
-			System.out.print("SQL数据库增删改操作异常");
+			//System.out.print("SQL数据库增删改操作异常");
 			e.printStackTrace();
 		}
 		return i;
@@ -58,9 +58,23 @@ public class DBSQL {
 			rSet = pStatement.executeQuery(s);
 		} catch (SQLException e) {
 			// TODO: handle exception
-			System.out.print("SQL数据库查询操作异常");
+			//System.out.print("SQL数据库查询操作异常");
 			e.printStackTrace();
 		}
 		return rSet;
+	}
+	
+	public static int SelectToNum(String s) {
+		int i = 0;
+		try {
+			pStatement = dbCom.prepareStatement(s);
+			rSet=pStatement.executeQuery();
+			if(rSet.next())
+				i = rSet.getInt("totalCount");
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return i;
 	}
 }
